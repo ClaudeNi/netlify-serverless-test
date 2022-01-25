@@ -13,12 +13,12 @@ const publicDirectoryPath = path.join(__dirname, "../build");
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-router.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../build/index.html"));
-});
-
 router.get("/test", (req, res) => {
     res.send("This is a test from express");
+});
+
+router.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "../build/index.html"));
 });
 
 exports.handler = serverless(app);
