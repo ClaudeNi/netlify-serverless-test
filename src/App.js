@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
     const [text, setText] = useState("Have no data fetched");
 
-    const fetchData = () => {
+    const fetchData = async () => {
         const fetchedData = await axios.get("/test");
         setText(fetchedData.data);
     };
