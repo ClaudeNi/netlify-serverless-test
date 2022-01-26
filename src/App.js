@@ -6,7 +6,7 @@ function App() {
     const [text, setText] = useState("Have no data fetched");
 
     const fetchData = async () => {
-        const fetchedData = await axios.get("/.netlify/functions/test");
+        const fetchedData = await axios.get("/netlify/functions/test");
         setText(fetchedData.data);
     };
 
