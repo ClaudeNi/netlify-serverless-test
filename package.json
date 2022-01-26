@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.25.0",
     "express": "^4.17.2",
+    "http-proxy-middleware": "^2.0.2",
+    "netlify-lambda": "^2.0.15",
     "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,8 +18,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "dev": "netlify-lambda serve .netlify/functions",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "netlify-lambda build .netlify/functions && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
